@@ -1,0 +1,67 @@
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset="utf-8"> 
+        <title>Game: Player vs Humam</title> 
+        <link rel="stylesheet" type="text/css" href="estilo.css" />
+    </head> 
+    <body bgcolor="#ffbf00">
+    
+        <div align="center">
+        <img width="180" src="jokepo.png" alt="Foto do Autor" > 
+    	</div>
+
+        <div align="center" style="font-size: 25px;font-weight: bold; font-family: sans-serif;color: #602b00;">
+        <h1>RESULTADO:</h1>
+        </div>
+        
+        <!-- Titulo no corpo da página
+        <div align="center" style="font-size: 16px;font-weight: bold; font-family: sans-serif;color: #602b00;">
+        <h1>Computer vs Humam</h1>
+    	</div>
+        -->
+            <script> 
+            //Variaveis:
+            var op, system, a=0, b=0; 
+            
+            while(a<3 && b<3){
+            do{ 
+                //Ler Opção do Usuário:
+                op = Number(prompt("Escolha uma opção: \n1-Pedra   \n2- Papel   \n3- Tesoura")); 
+                //Opção do Sistema: 
+        		system = parseInt(Math.random() * 3) +1; 
+        		//Show Options:
+        		console.info("Opção do Usuário = " + op + "\n Opção do Computador = "+ system);
+        		//Caso de Empate:	
+                if(op == system){ 
+        		document.write("<p><h4>Empate!!!</h4></p>");
+                alert("Empate!!!")
+                } 
+
+            }while(op == system); 
+            
+            if(op==2 && system==1 || op==1 && system==3 || op==3 && system==2){
+            	alert("Ponto para HUMANO!");
+                document.write("<p><h3>Ponto para HUMANO!</h3></p>")
+            	a++;
+            		
+            	}else if(system==2 && op==1 || system==1 && op==3 ||system==3 && op==2){
+            			alert("Ponto para COMPUTER!")
+                        document.write("<p><h3>Ponto para COMPUTER!</h3></p>")
+                        document
+            			b++;				
+            	}
+
+            }
+            if(a==3){
+            	document.write("<p><h2>VOCÊ GANHOU :) !!!</h2></p>")
+            }else if(b==3){
+            	document.write("<p><h2>O COMPUTADOR GANHOU :( </h2></p>")
+            }
+            </script>
+            <div align="center">
+            <a href="prop.html">Jogar Novamente<br /></a>    
+            <a href="menu.html">Voltar<br /></a>
+            </div>
+    </body> 
+</html> 
